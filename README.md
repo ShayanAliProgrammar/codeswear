@@ -1,6 +1,6 @@
 # Hi, my name is Shayan Ali.
 
-This is a e-commerce project made for fun!
+This is e-commerce project made for fun!
 
 I built this website using:
 
