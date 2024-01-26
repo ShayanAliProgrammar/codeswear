@@ -32,6 +32,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::get('/', [AdminController::class, 'dashboard'])->name('admin-dashboard');
         Route::get('/admin-change-info', [AdminController::class, 'adminChangeInfoPage'])->name('admin-change-info');
 
+        Route::post('/admin-change-about', [AdminController::class, 'adminChangeInfo'])->name('change-about-info');
+
         Route::get('/categories', [AdminController::class, 'productCategoriesPage'])->name('admin-product-categories');
 
         Route::get('/categories/add', [AdminController::class, 'categoryAddPage'])->name('admin-category-add');

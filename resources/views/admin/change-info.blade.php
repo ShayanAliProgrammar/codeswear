@@ -14,16 +14,15 @@
             <h1 class="text-4xl mb-4">Change Info</h1>
             <hr />
 
-            <form action="{{ route('category-add') }}" method="post" autocomplete="off">
+            <form action="{{ route('change-about-info') }}" method="post" autocomplete="off">
                 @csrf
                 @method('POST')
                 <div class="max-w-lg py-10 w-full [&>*]:w-full grid place-items-center h-full mx-auto gap-3">
                     <div class="grid gap-2">
                         <x-ui.label for="about_text">About {{ config('app.name') }}</x-ui.label>
-                        <x-ui.textarea id="about_text" name='about_text'
-                            type="text">{{ $about_info->about_text }}</x-ui.textarea>
+                        <x-ui.textarea id="about_text" name='about_text' type="text">{{ $about_info->about_text }}</x-ui.textarea>
                         @error('about_text')
-                            <p class="text-destructive text-sm">{{ $message }}</p>
+                        <p class="text-destructive text-sm">{{ $message }}</p>
                         @enderror
                     </div>
 

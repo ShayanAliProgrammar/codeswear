@@ -24,6 +24,18 @@ class AdminController extends Controller
         return view('admin.change-info', compact('about_info'));
     }
 
+    public function adminChangeInfo(Request $request)
+    {
+        $about_info = AboutInfo::latest()->get()[0];
+
+        $about_info->update(['about_text' => ($request->validate(['about_text' => 'required']))['about_text']]);
+
+        $about_info->save();
+
+        Cache::clear();
+        return redirect(route('admin-change-info'));
+    }
+
     public function productCategoriesPage()
     {
         $categories = Cache::remember('admin_products_categories', 5, function () {
